@@ -7,9 +7,10 @@ public class MainManager : MonoBehaviour
 {
     // Start() and Update() methods deleted - we don't need them right now
 
-    public static MainManager Instance;
+    public static MainManager Instance { get; private set; }
 
     public Color TeamColor;
+
 
     private void Awake()
     {
@@ -23,7 +24,6 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        LoadColor();
     }
 
     [System.Serializable]
